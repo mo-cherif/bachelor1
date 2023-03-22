@@ -1,0 +1,328 @@
+ #include <stdio.h>
+
+#define nombre 6 
+int main () {
+	
+	int tab[nombre] ;
+	short int i ; 
+	int somme = 0 ;
+	float Moyenne ;
+	int ocurrence = 0 ;
+	printf("Veuillez saisir les notes des etudiants\n");
+	for (i= 0 ; i<nombre ; i++)
+	{
+		printf("note[%d] : ",i);
+		scanf("%i",&tab[i]);
+	}
+	
+	for (i= 0 ; i<nombre ; i++)
+	{
+		somme = somme + tab [i];
+		
+		
+	}
+	
+	printf("Somme : %d\n",somme);
+	
+	Moyenne = somme / 6.0 ;
+	
+	printf("Moyenne : %f\n",Moyenne);
+	
+	for (i= 0 ; i<nombre ; i++)
+	{
+		if(tab[i] > Moyenne) {
+			 ocurrence++;
+		};
+	}
+	
+	printf("Ocurrence de nombre superieur a la moyenne : %i", ocurrence);
+
+}
+
+==================================================================================
+
+
+#include <stdio.h>
+
+#define taille 3
+
+int main ()  {
+	
+	int tab[taille] ;
+	short int i ; 
+	int premierGrand , deuxiemeGrand ;
+	
+	printf("Entrez les entiers\n");
+	
+	premierGrand = tab[0];
+	deuxiemeGrand = tab[0];
+
+	for(i =  0 ; i<taille ; i++) {
+		
+		printf("entier[%d] : ",i);
+		scanf("%i",&tab[i]);
+	
+		
+		if (tab[i] > premierGrand)
+		{
+			deuxiemeGrand = premierGrand ;
+			premierGrand = tab[i] ;
+		}
+		
+		if (tab[i] > deuxiemeGrand && tab[i] < premierGrand)
+		{
+		 	deuxiemeGrand = tab[i] ;
+		}
+		
+		
+		
+	}
+	
+	printf("Le premier grand element : %i\n",premierGrand);
+	printf("Le second grand element : %i",	deuxiemeGrand);
+	
+}
+// suppresion des elements d'un tableau
+=============================================================================
+
+#include <stdio.h>
+
+int main () {
+	
+	int t[100];
+	int taille , nombre,i , position ;
+	printf("Veuillez saisir la taille du tableau : ");
+	scanf("%d",&taille);
+	printf("Element du tableau\n");
+	
+	for (i= 0 ; i<taille ; i++)
+	{
+		printf("t[%d] : ",i);
+		scanf("%d",&t[i]);
+	}
+	
+	printf("Veuillez saisir sa position : ");
+	scanf("%d",&position);
+
+	if (position<0 || position >taille)
+	{
+		printf("Position invalide");
+	}
+	else
+	{
+		for (i = position; i<taille ; i++)
+		{
+			t[i-1] = t[i] ;
+		}
+		taille--;
+		printf("Element du tableau apres suppression: \n");
+		for(i= 0 ; i<taille ; i++)
+		{
+			printf("t[%d] = %d\t",i+1,t[i]);
+		}
+		
+		
+		
+		
+	}
+}
+
+// insertion d'element
+===============================================================================
+#include <stdio.h>
+
+int main () {
+	
+	int t[100];
+	int taille , nombre,i , position ;
+	printf("Veuillez saisir la taille du tableau : ");
+	scanf("%d",&taille);
+	printf("Element du tableau\n");
+	
+	for (i= 0 ; i<taille ; i++)
+	{
+		printf("t[%d] : ",i);
+		scanf("%d",&t[i]);
+	}
+	
+	printf("Veuillez saisir sa position : ");
+	scanf("%d",&position);
+
+	if (position<0 || position >taille)
+	{
+		printf("Position invalide");
+	}
+	else
+	{
+		for (i = position; i<taille ; i++)
+		{
+			t[i-1] = t[i] ;
+		}
+		taille--;
+		printf("Element du tableau apres suppression: \n");
+		for(i= 0 ; i<taille ; i++)
+		{
+			printf("t[%d] = %d\t",i+1,t[i]);
+		}
+		
+		
+		
+		
+	}
+}
+//////============================================================ unique
+#include <stdio.h>
+
+int main () {
+	
+	int t[100] , f[100] , compteur , taille , i , j;
+
+	printf("Veuillez saisir la taille du tableau : ");
+	scanf("%d",&taille);
+	for (i= 0 ; i<taille ; i++)
+	{
+		f[i] = -1;
+	}
+	
+	for (i= 0 ; i<taille ; i++)
+	{
+		printf("t[%d] : ",i);
+		scanf("%d",&t[i]);
+	}
+	
+	for (i= 0 ; i<taille ; i++)
+	{
+		compteur = 1 ;
+		
+		for (j =i+1 ; j<taille ; j++)
+	 	{
+	 		if (t[i] == t[j] )
+	 		{
+	 			compteur++;
+	 			f[j] = 0;
+			}
+		}
+		
+		if (f[i] != 0)
+		{
+			f[i] = compteur ;
+		}
+	}
+	
+	printf("Unique : \n");
+	
+	for (i= 0 ; i<taille ; i++)
+	{
+		if (f[i] == 1)
+		{
+			printf("%d   " , t[i]);
+		}
+	}
+	
+	
+}
+======================================qui ne sont pas unique
+//////============================================================ unique
+#include <stdio.h>
+
+int main () {
+	
+	int t[100] , f[100] , compteur , taille , i , j;
+
+	printf("Veuillez saisir la taille du tableau : ");
+	scanf("%d",&taille);
+	for (i= 0 ; i<taille ; i++)
+	{
+		f[i] = -1;
+	}
+	
+	for (i= 0 ; i<taille ; i++)
+	{
+		printf("t[%d] : ",i);
+		scanf("%d",&t[i]);
+	}
+	
+	for (i= 0 ; i<taille ; i++)
+	{
+		compteur = 1 ;
+		
+		for (j =i+1 ; j<taille ; j++)
+	 	{
+	 		if (t[i] == t[j] )
+	 		{
+	 			compteur++;
+	 			f[j] = 0;
+			}
+		}
+		
+		if (f[i] != 0)
+		{
+			f[i] = compteur ;
+		}
+	}
+	
+	printf("Unique : \n");
+	
+	for (i= 0 ; i<taille ; i++)
+	{
+		if (f[i] >= 2)
+		{
+			printf("%d   " , t[i]);
+		}
+	}
+	
+	
+}
+=================================================================================
+Inverser les elements d'un tableau
+
+#include<stdio.h>
+
+int main ()
+{
+	int tab[100] ;
+	short int i , j  ;
+	int taille , position , tmp ; 
+	
+	printf("Taille du T ? ");
+	scanf("%d",&taille);
+	
+	printf("Remplissage : \n");
+	
+	for (i = 0 ; i<taille ; i++)
+	{
+		printf("T[%d] : ",i+1);
+		scanf("%d",&tab[i]);
+	}
+	
+	printf("\nContenu : \n");
+	
+	for (i = 0 ; i<taille ; i++)
+	{
+		printf("%d  ",tab[i]);
+	}
+	
+	for (i = 0 , j= taille-1 ; i<j ; i++ , j--)
+	{
+		
+			tmp = tab[i] ;
+			tab[i] = tab[j];
+			tab[j] = tmp ;
+		
+	}
+	
+	printf("\nInverse :\n");
+	
+	for (i = 0 ; i<taille ; i++)
+	{
+		printf("%d  ",tab[i]);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}

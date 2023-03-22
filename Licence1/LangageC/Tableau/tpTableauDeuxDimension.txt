@@ -1,0 +1,87 @@
+#include <stdio.h>
+
+int main () {
+	
+	int colonne, ligne , matrice[100][100] , matrice2[100][100] , somme[100][100]  ;
+	short int i , j  ;
+	
+	printf("Nombre De Ligne ? ");
+	scanf("%d",&ligne);
+	
+	printf("Nombre De Colonne ? ");
+	scanf("%d",&colonne);
+	
+	// Remplissage
+	printf("Premiere Matrice\n");
+	for (i = 0 ; i<ligne ; i++)  {
+		
+		for (j = 0 ; j<colonne ; j++)  {
+				
+			printf("(%d,%d) : ",i+1 , j+1);
+			scanf("%d",&matrice[i][j]);
+					
+				
+				
+		}
+	}
+	
+	printf("seconde Matrice\n");
+	
+	for (i = 0 ; i<ligne ; i++)  {
+		
+		for (j = 0 ; j<colonne ; j++)  {
+			
+				printf("(%d,%d) : ",i+1 , j+1);
+				scanf("%d",&matrice2[i][j]);
+					
+				
+				
+		}
+	}
+	
+	for (i = 0 ; i<ligne ; i++)  {
+		
+		for (j = 0 ; j<colonne ; j++)  {
+			
+			
+					somme = matrice[i][j] + matrice2[i][j];
+				
+				
+				
+		}
+	}
+	
+	
+	// Lecture
+	printf("Contenu 1ere matrice\n");
+	for (i = 0 ; i<ligne ; i++)  {
+		
+		for (j = 0 ; j<colonne ; j++)  {
+			printf("%4d" , matrice[i][j]);
+		}
+		
+		printf("\n");
+	}
+	
+	printf("Contenu seconde matrice\n");
+	for (i = 0 ; i<ligne ; i++)  {
+		
+		for (j = 0 ; j<colonne ; j++)  {
+			printf("%4d" , matrice2[i][j]);
+		}
+		
+		printf("\n");
+	}
+	
+	printf("Somme des deux matrices\n");
+	for (i = 0 ; i<ligne ; i++)  {
+		
+		for (j = 0 ; j<colonne ; j++)  {
+			printf("%4d" , somme[i][j]);
+		}
+		
+		printf("\n");
+	}
+	
+	
+}
